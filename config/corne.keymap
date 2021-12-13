@@ -8,7 +8,37 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
+#define DEFAULT 0
+#define SYM     1
+#define NAV     2
+#define NUM     3
+#define ADJUST  4
+
+&mt {
+    tapping-term-ms = <180>;
+};
+
 / {
+        behaviors {
+            hm: homerow_mods {
+                compatible = "zmk,behavior-hold-tap";
+                label = "HOMEROW_MODS";
+                tapping-term-ms = <170>;
+                quick_tap_ms = <0>;
+                flavor = "tap-preferred";
+                bindings = <&kp>, <&kp>;
+            };
+        };
+
+        combos {
+            compatible = "zmk,combos";
+            combo_capslock {
+                timeout-ms = <50>;
+                key-positions = <16 19>;
+                bindings = <&kp CAPS>;
+          };
+        };
+
         keymap {
                 compatible = "zmk,keymap";
 
