@@ -13,7 +13,7 @@
 #define SYM     1
 #define NAV     2
 #define NUM     3
-#define ADJUST  4
+#define WIN     4
 
 /*
  * Temporarily here because nice nano v2 spi is not defined on ZMk Yet
@@ -87,20 +87,20 @@
 // |  TAB |  Q  |  W  |  F  |  P  |  B  |   |  J  |  L   |  U  |  Y  |  ;  |   BSPC    |
 // |  ESC |  A  |  R  |  S  |  T  |  G  |   |  M  |  N   |  E  |  I  |  O  |    '      |
 // |      |  Z  |  X  |  C  |  D  |  V  |   |  K  |  H   |  ,  |  .  |  /  |   RET     |
-//                    | NUM | SYM | NAV || SPC/NAV |    | ADJ
+//                    | NUM | SYM | NAV || SPC/NAV |    | WIN
                         bindings = <
    &kp TAB &kp Q &kp W &kp F &kp P &kp B   &kp J &kp L  &kp U     &kp Y   &kp SEMI  &kp BSPC
    &kp ESC &hm LCTRL A &hm LALT R &hm LGUI S &hm LSHFT T &kp G   &kp M &hm RSHFT N  &hm RGUI E &hm LALT I &hm RCTRL O &kp SQT
    &none &kp Z &kp X &kp C &kp D &kp V   &kp K &kp H  &kp COMMA &kp DOT &kp FSLH &kp RET
-                        &mo NUM  &mo SYM &mo NAV &lt NAV SPACE &none &mo ADJUST
+                        &mo NUM  &mo SYM &mo NAV &lt NAV SPACE &none &mo WIN
                         >;
                 };
 
                 sym_layer {
-// ----------------------------------------------------------------------------------
-// |    |  !  |  @  |  {  |  }  | "|" |   |  &  |  *  |  <  |  >  |     |           |
-// |    |  #  |  $  |  (  |  )  |  `  |   |  -  |  =  |  +  |  _  |     |           |
-// |    |  %  |  ^  |  [  |  ]  |  ~  |   |  /  |     |     |     |     |           |
+// ----------------------------------------------------------------------------
+// |    |  !  |  @  |  {  |  }  | "|" |   |  &  |  *  |  <  |  >  |     |     |
+// |    |  #  |  $  |  (  |  )  |  `  |   |  -  |  =  |  +  |  _  |     |     |
+// |    |  %  |  ^  |  [  |  ]  |  ~  |   |  /  |     |     |     |     |     |
 //                       |     |     |     |    |     |
                         bindings = <
    &trans &kp EXCL  &kp AT   &kp LBRC &kp RBRC &kp PIPE        &kp AMPS &kp ASTRK &kp LT  &kp GT  &trans     &trans
@@ -111,7 +111,7 @@
                 };
 
                 nav_layer {
-// -----------------------------------------------------------------------------------------
+// ----------------------------------------------------------------------------------
 // |    |     |     |     |     |     |   |     | HOME| PGDN| PGUP| END |     | DEL |
 // |    | CTRL| ALT | GUI | SHFT|     |   |     | LEFT| DOWN|  UP |RIGHT|     |     |
 // |    | UNDO| CUT |COPY | PSTE|     |   |     | <tab|     |     |tab> |     |     |
@@ -125,7 +125,7 @@
                 };
 
                 num_layer {
-// -----------------------------------------------------------------------------------------
+// ----------------------------------------------------------------------------
 // |    | F1  | F2  | F3  | F4  |     |   |     |  7  |  8  |  9  |     |     |
 // |    | F5  | F6  | F7  | F8  |     |   |     |  4  |  5  |  6  |     |     |
 // |    | F9  | F10 | F11 | F12 |     |   |     |  1  |  2  |  3  |     |     |
@@ -138,19 +138,18 @@
                         >;
                 };
 
-                adjust_layer {
-// -----------------------------------------------------------------------------------------
-// | RGB BRI+ | RGB SAT+ | RGB HUE+ | RGB ANI+ |    | RGB TOG |   |  BT1  | BT2 | BT3 | BT4 | BT5 | BT CLR |
-// | RGB BRI- | RGB SAT- | RGB HUE- | RGB ANI+ |    |         |   |       |     |     |     |     |        |
-// |          |          |          |          |    |         |   | RESET |     |     |     |     |        |
+                win_layer {
+// -----------------------------------------------------------------------------------------------------------------------------
+// | RESET    | RGB BRI+ | RGB SAT+ | RGB HUE+ | RGB ANI+ |         |   | WIN  TL |       |       | WIN TR  | WIN LG  | RESET  |
+// | RGB TOG  | RGB BRI- | RGB SAT- | RGB HUE- | RGB ANI+ |         |   | WIN L   | WIN D | WIN U | WIN R   | WIN FUL | PSCRN  |
+// | BT_CLR   | BT 0     | BT 1     | UG COLOR |          |         |   | WIN BL  |       |       | WIN BR  | WIN SM  |        |
 //                                              |     |     |     |     |     |
                         bindings = <
-   &rgb_ug RGB_BRI &rgb_ug RGB_SAI &rgb_ug RGB_HUI &rgb_ug RGB_EFF &none &rgb_ug RGB_TOG    &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &bt BT_CLR
-   &rgb_ug RGB_BRD &rgb_ug RGB_SAD &rgb_ug RGB_HUD &rgb_ug RGB_EFR &none &none              &none        &none        &none        &none        &none        &none
-   &none           &none           &none           &none           &none &none              &reset       &none        &none        &none        &none        &none
+   &reset &rgb_ug RGB_BRI &rgb_ug RGB_SAI &rgb_ug RGB_HUI &rgb_ug RGB_EFF &none            &kp LC(LA(U)) &none &none &kp LC(LA(I)) &kp LC(LA(EQUAL)) &reset
+   &rgb_ug RGB_TOG &rgb_ug RGB_BRD &rgb_ug RGB_SAD &rgb_ug RGB_HUD &rgb_ug RGB_EFR &none   &kp LC(LA(LEFT)) &kp LC(LA(DOWN)) &kp LC(LA(UP)) &kp LC(LA(RIGHT)) &kp LC(LA(RET)) &kp LG(LS(N5))
+   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &rgb_ug RGB_COLOR_HSB(128,100,100) &none &none     &kp LC(LA(J)) &none &none &kp LC(LA(K)) &kp LC(LA(MINUS)) &none
                         &trans     &trans      &trans       &trans        &trans      &trans
                         >;
                 };
-
         };
 };
