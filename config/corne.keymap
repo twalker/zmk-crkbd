@@ -112,14 +112,14 @@
 
                 nav_layer {
 // ----------------------------------------------------------------------------------
-// |    |     |     |     |     |     |   |     | HOME| PGUP|     | END |     | DEL |
-// |    | CTRL| ALT | GUI | SHFT|     |   |     | LEFT| DOWN|  UP |RIGHT|     |     |
-// |    | UNDO| CUT |COPY |     | PSTE|   |     | <tab| PGDN|     |tab> |     |     |
+// |    |     |     |     |     |     |   |     |     | HOME | UP | PGUP |     | DEL |
+// |    | CTRL| ALT | GUI | SHFT|     |   |     | <tab| LEFT |    |RIGHT | tab>|     |
+// |    | UNDO| CUT |COPY |     | PSTE|   |     |     | END  |DOWN| PGDN |     |     |
 //                       |     |     |     |    |     |
                         bindings = <
-   &trans &none     &none     &none     &none     &none         &kp HOME &kp PG_UP &none &kp END   &none    &kp DEL
-   &trans &kp LCTRL &kp LALT  &kp LGUI  &kp LSHFT &none         &kp LEFT &kp DOWN  &kp UP    &kp RIGHT &none    &none
-   &trans &kp LC(Z) &kp LC(X) &kp LC(C) &none     &kp LC(V)     &kp LS(LC(TAB)) &kp PG_DN &none &kp LC(TAB) &none   &none
+   &trans &none     &none     &none     &none     &none         &none &kp HOME &kp UP &kp PG_UP &none &kp DEL
+   &trans &kp LCTRL &kp LALT  &kp LGUI  &kp LSHFT &none         &kp LS(LC(TAB)) &kp LEFT &none &kp RIGHT &kp LC(TAB) &none
+   &trans &kp LC(Z) &kp LC(X) &kp LC(C) &none &kp LC(V)         &none &kp END &kp DOWN &kp PG_DN &none   &none
                         &trans       &trans      &trans         &trans        &trans     &trans
                         >;
                 };
@@ -140,14 +140,14 @@
 
                 win_layer {
 // -----------------------------------------------------------------------------------------------------------------------------
-// | RESET    | RGB BRI+ | RGB SAT+ | RGB HUE+ | RGB ANI+ |         |   | WIN  TL |       |       | WIN TR  | WIN LG  | RESET  |
-// | RGB TOG  | RGB BRI- | RGB SAT- | RGB HUE- | RGB ANI+ |         |   | WIN L   | WIN D | WIN U | WIN R   | WIN FUL | PSCRN  |
-// | BT_CLR   | BT 0     | BT 1     | UG COLOR |          |         |   | WIN BL  |       |       | WIN BR  | WIN SM  |        |
+// | RESET    | RGB BRI+ | RGB SAT+ | RGB HUE+ | RGB ANI+ |         |   |         | WIN TL| WIN U | WIN TR  | WIN LG  |        |
+// | RGB TOG  | RGB BRI- | RGB SAT- | RGB HUE- | RGB ANI+ |         |   |         | WIN L |       | WIN R   | WIN FUL | PSCRN  |
+// | BT_CLR   | BT 0     | BT 1     | UG COLOR |          |         |   |         | WIN BL| WIN D | WIN BR  | WIN SM  |        |
 //                                              |     |     |     |     |     |
                         bindings = <
-   &reset &rgb_ug RGB_BRI &rgb_ug RGB_SAI &rgb_ug RGB_HUI &rgb_ug RGB_EFF &none            &kp LC(LA(U)) &none &none &kp LC(LA(I)) &kp LC(LA(EQUAL)) &reset
-   &rgb_ug RGB_TOG &rgb_ug RGB_BRD &rgb_ug RGB_SAD &rgb_ug RGB_HUD &rgb_ug RGB_EFR &none   &kp LC(LA(LEFT)) &kp LC(LA(DOWN)) &kp LC(LA(UP)) &kp LC(LA(RIGHT)) &kp LC(LA(RET)) &kp LG(LS(N5))
-   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &rgb_ug RGB_COLOR_HSB(128,100,100) &none &none     &kp LC(LA(J)) &none &none &kp LC(LA(K)) &kp LC(LA(MINUS)) &none
+   &reset &rgb_ug RGB_BRI &rgb_ug RGB_SAI &rgb_ug RGB_HUI &rgb_ug RGB_EFF &none            &none &kp LC(LA(U)) &kp LC(LA(UP)) &kp LC(LA(I)) &kp LC(LA(EQUAL)) &none
+   &rgb_ug RGB_TOG &rgb_ug RGB_BRD &rgb_ug RGB_SAD &rgb_ug RGB_HUD &rgb_ug RGB_EFR &none   &none &kp LC(LA(LEFT)) &none &kp LC(LA(RIGHT)) &kp LC(LA(RET)) &kp LG(LS(N5))
+   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &rgb_ug RGB_COLOR_HSB(128,100,100) &none &none     &none &kp LC(LA(J)) &kp LC(LA(DOWN)) &kp LC(LA(K)) &kp LC(LA(MINUS)) &none
                         &trans     &trans      &trans       &trans        &trans      &trans
                         >;
                 };
