@@ -36,9 +36,9 @@ west build -b nice_nano_v2 --pristine -- -DSHIELD=corne_left -DZMK_CONFIG="/home
 
 | | | | | | | — | | | | | | |
 |:---:|:---:|:---:|:---:|:---:|:---:|:-----:|:---:|:---:|:---:|:---:|:---:|:---:|
-|    |     |     |     |     |     |   |     | HOME| PGUP|     | END |     | DEL |
-|    | CTRL| ALT | GUI | SHFT|     |   |     | LEFT| DOWN|  UP |RIGHT|     |     |
-|    | UNDO| CUT |COPY |     | PSTE|   |     | <tab| PGDN|     |tab> |     |     |
+|    |     |     |     |     |     |   |     |     | HOME|  UP | PGUP|     | DEL |
+|    | CTRL| ALT | GUI | SHFT|     |   |     | <tab| LEFT|     |RIGHT|tab> |     |
+|    | UNDO| CUT |COPY |     | PSTE|   |     |     | END | DOWN| PGDN|     |     |
 
 
 # numbers layer (#)
