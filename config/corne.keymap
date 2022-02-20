@@ -57,6 +57,10 @@
     tapping-term-ms = <180>;
 };
 
+
+&caps_word {
+};
+
 / {
         behaviors {
             hm: homerow_mods {
@@ -70,9 +74,6 @@
             };
         };
 
-        &caps_word {
-
-        };
 
         keymap {
                 compatible = "zmk,keymap";
