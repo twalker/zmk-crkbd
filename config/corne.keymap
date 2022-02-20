@@ -57,11 +57,6 @@
     tapping-term-ms = <180>;
 };
 
-
-&caps_word {
-    continue-list = <UNDERSCORE MINUS>;
-};
-
 / {
         behaviors {
             hm: homerow_mods {
@@ -75,6 +70,14 @@
             };
         };
 
+        combos {
+            compatible = "zmk,combos";
+            combo_capsword {
+                timeout-ms = <50>;
+                key-positions = <16 19>;
+                bindings = <&caps_word>;
+          };
+        };
 
         keymap {
                 compatible = "zmk,keymap";
