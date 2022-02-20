@@ -92,7 +92,7 @@
    &kp TAB &kp Q &kp W &kp F &kp P &kp B   &kp J &kp L  &kp U     &kp Y   &kp SEMI  &kp BSPC
    &kp ESC &hm LCTRL A &hm LALT R &hm LGUI S &hm LSHFT T &kp G   &kp M &hm RSHFT N  &hm RGUI E &hm LALT I &hm RCTRL O &kp SQT
    &none &kp Z &kp X &kp C &kp D &kp V   &kp K &kp H  &kp COMMA &kp DOT &kp FSLH &kp RET
-                        &mo NUM  &mo SYM &mo NAV &lt NAV SPACE &none &mo WIN
+                        &mo NUM  &mo SYM &mo NAV &lt NAV SPACE &mo WIN &none
                         >;
                 };
 
@@ -112,14 +112,14 @@
 
                 nav_layer {
 // ----------------------------------------------------------------------------------
-// |    |     |     |     |     |     |   |     |     | PGUP | UP |      |     | DEL |
+// |    |     |     |     |     |     |   |     |     | PGUP | UP |      | INS | DEL |
 // |    | CTRL| ALT | GUI | SHFT|     |   |     | HOME| LEFT |DOWN|RIGHT | END |     |
-// |    | UNDO| CUT |COPY |     | PSTE|   |     | <tab| GPDN |    |      | tab>|     |
+// |MENU| UNDO| CUT |COPY |     | PSTE|   |     | <tab| PGDN |    |      | tab>|     |
 //                       |     |     |     |    |     |
                         bindings = <
-   &trans &none     &none     &none     &none     &none         &none &kp PG_UP &kp UP &none &none &kp DEL
+   &trans &none     &none     &none     &none     &none         &none &kp PG_UP &kp UP &none &kp INS &kp DEL
    &trans &kp LCTRL &kp LALT  &kp LGUI  &kp LSHFT &none         &kp HOME &kp LEFT &kp DOWN &kp RIGHT &kp END &none
-   &trans &kp LG(Z) &kp LG(X) &kp LG(C) &none &kp LG(V) &kp LS(LC(TAB)) &kp PG_DN &none &none &kp LC(TAB) &none
+   &kp K_APP &kp LG(Z) &kp LG(X) &kp LG(C) &none &kp LG(V)         &kp LS(LC(TAB)) &kp PG_DN &none &none &kp LC(TAB) &none
                         &trans       &trans      &trans         &trans        &trans     &trans
                         >;
                 };
