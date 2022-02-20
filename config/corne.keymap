@@ -91,7 +91,7 @@
                         bindings = <
    &kp TAB &kp Q &kp W &kp F &kp P &kp B   &kp J &kp L  &kp U     &kp Y   &kp SEMI  &kp BSPC
    &kp ESC &hm LCTRL A &hm LALT R &hm LGUI S &hm LSHFT T &kp G   &kp M &hm RSHFT N  &hm RGUI E &hm LALT I &hm RCTRL O &kp SQT
-   &kp none &kp Z &kp X &kp C &kp D &kp V   &kp K &kp H  &kp COMMA &kp DOT &kp FSLH &kp RET
+   &none &kp Z &kp X &kp C &kp D &kp V   &kp K &kp H  &kp COMMA &kp DOT &kp FSLH &kp RET
                         &mo NUM  &mo SYM &mo NAV &lt NAV SPACE &mo WIN &none
                         >;
                 };
@@ -112,8 +112,8 @@
 
                 nav_layer {
 // ----------------------------------------------------------------------------------
-// |    |     |     |     |     |     |   |     |     | PGUP | UP |      |     | DEL |
-// |    | CTRL| ALT | GUI | SHFT|     |   |     | HOME| LEFT |DOWN|RIGHT | END | INS |
+// |    |     |     |     |     |     |   |     |     | PGUP | UP |      | INS | DEL |
+// |    | CTRL| ALT | GUI | SHFT|     |   |     | HOME| LEFT |DOWN|RIGHT | END |     |
 // |MENU| UNDO| CUT |COPY |     | PSTE|   |     | <tab| GPDN |    |      | tab>|     |
 //                       |     |     |     |    |     |
                         bindings = <
