@@ -70,7 +70,9 @@
             };
         };
 
-        &caps_word
+        &caps_word {
+
+        };
 
         keymap {
                 compatible = "zmk,keymap";
