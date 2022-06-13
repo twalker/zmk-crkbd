@@ -54,7 +54,7 @@
    &kp TAB &kp Q &kp W &kp F &kp P &kp B   &kp J &kp L  &kp U     &kp Y   &kp SEMI  &kp BSPC
    &kp ESC &hm LCTRL A &hm LALT R &hm LGUI S &hm LSHFT T &kp G   &kp M &hm RSHFT N  &hm RGUI E &hm LALT I &hm RCTRL O &kp SQT
    &none &kp Z &kp X &kp C &kp D &kp V   &kp K &kp H  &kp COMMA &kp DOT &kp FSLH &kp RET
-                        &mo NUM  &mo SYM &mo NAV &lt NAV SPACE &mo WIN &none
+                        &mo NUM  &mo SYM &lt NAV BSPC &lt NAV SPACE &mo WIN &none
                         >;
                 };
 
@@ -82,7 +82,7 @@
    &trans &none     &none     &none     &none     &none         &none &kp PG_UP &kp UP &none &kp INS &kp DEL
    &trans &kp LCTRL &kp LALT  &kp LGUI  &kp LSHFT &none         &kp HOME &kp LEFT &kp DOWN &kp RIGHT &kp END &none
    &kp K_APP &kp LG(Z) &kp LG(X) &kp LG(C) &none &kp LG(V)         &kp LS(LC(TAB)) &kp PG_DN &none &none &kp LC(TAB) &none
-                        &trans       &trans      &trans         &trans        &trans     &trans
+                        &trans       &trans      &kp DEL       &trans        &trans     &trans
                         >;
                 };
 
